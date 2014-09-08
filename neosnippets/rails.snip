@@ -1,0 +1,122 @@
+snippet     rd
+abbr        render
+    render
+
+snippet     rda
+abbr        render :action
+    render action: 
+
+snippet     rdj
+abbr        render :json
+    render json: 
+
+snippet     rdl
+abbr        render :layout
+    render layout: 
+
+snippet     rdp
+abbr        render :partial
+    render partial: 
+
+snippet     rdt
+abbr        render :text
+    render text: 
+
+snippet     redt
+abbr        redirect_to
+    redirect_to
+
+snippet     reda
+abbr        redirect_to :action
+    redirect_to action: 
+
+snippet     rest
+abbr        respond_to
+    respond_to
+
+snippet     blt
+abbr        belongs_to
+    belongs_to
+
+snippet     hso
+abbr        has_one
+    has_one
+
+snippet     hsm
+abbr        has_many
+    has_many
+
+snippet     habtm
+abbr        has_and_belongs_to_many
+    has_and_belongs_to_many
+
+snippet     vala
+abbr        validates_acceptance_of
+    validates_acceptance_of
+
+snippet     valc
+abbr        validates_confirmation_of
+    validates_confirmation_of
+
+snippet     vale
+abbr        validates_exclusion_of
+    validates_exclusion_of
+
+snippet     valf
+abbr        validates_format_of
+    validates_format_of
+
+snippet     vali
+abbr        validates_inclusion_of
+    validates_inclusion_of
+
+snippet     vall
+abbr        validates_length_of
+    validates_length_of
+
+snippet     valn
+abbr        validates_numericality_of
+    validates_numericality_of
+
+snippet     valp
+abbr        validates_presence_of
+    validates_presence_of
+
+snippet     valu
+abbr        validates_uniqueness_of
+    validates_uniqueness_of
+
+snippet     logd
+abbr        logger.debug
+    Rails.logger.debug
+
+snippet     log
+abbr        logger.info
+    Rails.logger.info( ${1} ).yellow.bold
+
+snippet     logw
+abbr        logger.warn
+    Rails.logger.warn
+
+snippet     loge
+abbr        logger.error
+    Rails.logger.error
+
+snippet     logf
+abbr        logger.fatal
+    Rails.logger.fatal
+
+snippet ba
+  before_action :${0}
+
+snippet hmd
+abbr has_many with dependent
+  has_many :${1}, class_name: '${2}', foreign_key: '${3}', :dependent => :destroy
+
+snippet hmt
+abbr has_may through
+  has_many :${1:object}, through: :${0:object}
+
+snippet hod
+abbr has_one with dependent
+  has_one :${1}, :dependent => :destroy

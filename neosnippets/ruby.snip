@@ -1,0 +1,130 @@
+include rails.snip
+include rspec.snip
+
+# #!/usr/bin/env ruby
+snippet #!
+  #!/usr/bin/env ruby
+  # encoding: utf-8
+
+snippet     if
+abbr        if ... end
+  if ${1}
+    ${0}
+  end
+
+snippet ife
+  if ${1:condition}
+    ${2}
+  else
+    ${0}
+  end
+
+snippet     def
+abbr        def ... end
+  def ${1}
+    ${0}
+  end
+
+snippet     defrescue
+alias       defr
+abbr        def ... rescue ... end
+  def ${1}
+    ${0}
+  rescue Exception => e
+    ${0}
+  end
+
+snippet     do
+abbr        do ... end
+  do
+    ${1:TARGET}
+  end
+
+snippet     dovar
+abbr        do |var| ... end
+  do |${1:#:var}|
+    ${2:TARGET}
+  end
+
+snippet     blk
+abbr        { ... }
+  { ${1:TARGET} }
+
+snippet     blkvar
+abbr        {|var| ... }
+  { |${1:#:var}| ${2:TARGET} }
+
+snippet     fileopen
+alias       open
+abbr        File.open(filename) do ... end
+  File.open(${1:#:filename}, '${2:#:mode}') do |${3:io}|
+    ${0:TARGET}
+  end
+
+snippet encoding
+alias   enc
+  # coding: utf-8
+  ${0}
+
+snippet each
+options word
+  each { |${1:#:variable}| ${2} }
+
+snippet ead
+options word
+  each do |${1:#:variable}|
+    ${2}
+  end
+
+snippet eak
+options word
+  each_key { |${1:#:variable}| ${2} }
+
+snippet eai
+options word
+  each_with_index { |${1:#:variable}| ${2} }
+
+snippet map
+options word
+  map { |${1:#:variable}| ${2} }
+
+snippet sort
+options word
+  sort { |${1:#:variable}| ${2} }
+
+snippet sort_by
+options word
+  sort_by { |${1:#:variable}| ${2} }
+
+snippet lambda
+options word
+  -> (${1:#:args}) { ${2} }
+
+snippet lambda-keyword
+options word
+  lambda { |${1:#:args}| ${2} }
+
+snippet     case
+abbr        case ... when ... else ... end
+options     head
+  case ${1}
+  when ${2}
+    ${3}
+  else
+    ${4}
+  end
+
+snippet     class
+  class ${1:#:Name}
+    ${0}
+  end
+
+# attr_reader
+snippet r
+  attr_reader :${0}
+# attr_writer
+snippet w
+  attr_writer :${0}
+# attr_accessor
+snippet rw
+  attr_accessor :${0}

@@ -1,0 +1,48 @@
+snippet cont
+  context '${1:message}' do
+    ${0}
+  end
+snippet bef
+abbr before each
+  before :${1:each} do
+    ${0}
+  end
+snippet aft
+abbr after each
+  after :${1:each} do
+    ${0}
+  end
+snippet let
+  let(:${1:object}) { ${0} }
+
+snippet show
+abbr    show_me_the_page
+  save_and_open_page
+
+snippet desc
+abbr    rspec.describe
+  describe "feature" do
+    ${0}
+  end
+
+snippet it
+abbr    it.should
+  it "feature"  do 
+    ${0}
+  end
+
+snippet exp
+abbr    expect().to
+  expect(${1}).to
+
+snippet click
+abbr    click_on
+  click_on(${1})
+
+snippet fill
+abbr    fill_in
+  fill_in('${1}', :with => '${2}')
+
+snippet have
+abbr    have_selector
+  expect(page).to have_selector('${1}', text: '${2}')
