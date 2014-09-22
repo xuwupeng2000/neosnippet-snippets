@@ -92,7 +92,7 @@ abbr        logger.debug
 
 snippet     log
 abbr        logger.info
-    Rails.logger.info( ${1} ).yellow.bold
+    Rails.logger.info( ${1}.inspect.yellow.bold )
 
 snippet     logw
 abbr        logger.warn
