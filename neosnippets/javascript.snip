@@ -55,16 +55,80 @@ options head
     ${0:TARGET}
   }
 
+snippet while
+options head
+  while (${1:true}) {
+    ${0:TARGET}
+  }
+
+snippet switch
+options head
+  switch (${1:#:var}) {
+    case ${2:#:val}:
+      ${0:TARGET}
+      break;
+  }
+
+snippet try
+options head
+  try {
+    ${0:TARGET}
+  } catch (${1:e}) {
+    ${2:TARGET}
+  }
+
+snippet try_finally
+options head
+  try {
+    ${0:TARGET}
+  } catch (${1:e}) {
+    ${2}
+  } finally {
+    ${3}
+  }
+
+
 snippet key-value
 abbr :,
 options word
   ${1:#:value_name}: ${0:#:value},
 
+#snippet key
+#options word
+#  ${1:#:key}: "${2:#:value}"}${3:, }
+
 snippet setTimeout-function
 options head
   setTimeout(function() { ${0} }, ${1:10});
 
-snippet log
+snippet console-log
 alias cl
 options head
   console.log(${0:TARGET});
+
+snippet console-trace
+alias ct
+options head
+  console.trace();
+
+snippet console-error
+alias ce
+options head
+  console.error(${0:TARGET});
+
+snippet console-warn
+alias cw
+options head
+  console.warn(${0:TARGET});
+
+snippet console-info
+alias ci
+options head
+  console.info(${0:TARGET});
+
+snippet iife
+options head
+  (function(${1}) {
+    'use strict';
+    ${0:TARGET}
+  })(${2});
