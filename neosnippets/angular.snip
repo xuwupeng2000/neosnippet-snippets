@@ -1,0 +1,50 @@
+snippet ngcontroller
+	var ${1:controllerName} = function(${2:scope}, ${3:injectables}) {
+		${4}
+	};
+
+snippet ngmmodule
+	angular.module('${1:moduleName}', [${2:moduleDependencies}]);
+	${3}
+
+# A factory in a module
+snippet ngfactory
+	factory('${1:factoryName}', function(${2:dependencies}) {
+		${3}
+	});
+
+snippet ngservice
+	service('${1:serviceName}', function(${2:injectables}) {
+		${3}
+	});
+
+snippet ngfilter
+	filter('${1:filterName}', function(${2:injectables}) {
+		return function(input, ${3:args}) {
+			${4}
+		};
+	});
+
+snippet ngroute
+	$routeProvider.when('${1:url}', {
+		templateUrl: '${2:templateUrl}',
+		controller: '${3:controller}'
+	});
+
+snippet $function
+	$scope.${1:functionName} = function(${2:args}) {
+		${3}
+	};
+
+snippet $value
+	$scope.${1:variable} = ${2:value};
+
+snippet $w
+	$scope.$watch('${1:watchExpr}', function(newValue, oldValue) {
+		${2}
+	});
+
+snippet $on
+	$scope.$on('${1:eventName}', function(event, ${2:args}) {
+		${3}
+	});
