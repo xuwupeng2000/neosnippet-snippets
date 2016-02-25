@@ -1,40 +1,88 @@
 snippet ngcontroller
-	var ${1:controllerName} = function(${2:scope}, ${3:injectables}) {
-		${4}
-	};
+  (() => {
+    'use strict';
+
+    angular
+      .module('${1:module}')
+      .controller('${2: controllerlName}', controller);
+
+    controller.$inject = ['$scope'];
+
+    function controller($scope) {
+      activate();
+
+      function activate() {
+      }
+
+    }
+  })();
 
 snippet ngmmodule
-	angular.module('${1:moduleName}', [${2:moduleDependencies}]);
-	${3}
+    (() => {
+      'use strict';
+
+      let App = angular
+        .module('${1:module}', [
+          'restangular', 'templates'
+        ])
+      .config(function() {
+
+      })
+      .run(function() {
+      });
+
+    })();
 
 # A factory in a module
 snippet ngfactory
-	factory('${1:factoryName}', function(${2:dependencies}) {
-		${3}
-	});
+  (() => {
+    'use strict';
+
+    angular
+        .module('${1:module}')
+        .factory('${2:factoryName}', factory);
+
+    factory.$inject = ['dependencies'];
+
+    function factory(dependencies) {
+      let object ={};
+      return object;
+    }
+  })();
 
 snippet ngservice
-	service('${1:serviceName}', function(${2:injectables}) {
-		${3}
-	});
+  (() => {
+    'use strict';
+
+    angular
+      .module('${1:module}')
+      .service('${2:service}', service);
+
+    service.$inject = ['dependencies'];
+
+    function service(dependencies) {
+      let service = {};
+
+      return service;
+    }
+  })();
 
 snippet ngfilter
-	filter('${1:filterName}', function(${2:injectables}) {
-		return function(input, ${3:args}) {
-			${4}
-		};
-	});
+  (() => {
+    'use strict';
+
+    filter('${1:filter}', function(${2:injectables}) {
+      return function(input, ${3:args}) {
+        return converted;
+      };
+    });
+  })();
 
 snippet ngroute
 	$routeProvider.when('${1:url}', {
 		templateUrl: '${2:templateUrl}',
 		controller: '${3:controller}'
 	});
-
-snippet $function
-	$scope.${1:functionName} = function(${2:args}) {
-		${3}
-	};
 
 snippet $value
 	$scope.${1:variable} = ${2:value};
